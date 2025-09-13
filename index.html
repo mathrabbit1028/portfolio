@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="reset.css" rel="stylesheet" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>portfolio</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="slide-container" id="slides">
+      
+      <div class="slide">
+        <table class="info-table">
+          <tr><th style="background: #F5D2D2;">이름</th><td>정민건</td></tr>
+          <tr><th style="background: #F8F7BA;">나이</th><td id="age">만 17세</td></tr>
+          <tr><th style="background: #BDE3C3;">MBTI</th><td>ENTJ</td></tr>
+          <tr><th style="background: #A3CCDA;">Contact</th><td>geon4096@gmail.com</td></tr>
+        </table>
+      </div>
+      
+      <div class="slide">
+        <div class="photo-gallery" id="gallery">
+          <img src="img/1.jpg" class="active"/>
+          <img src="img/2.jpg"/>
+          <img src="img/3.jpg"/>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="piano">
+          
+          <div class="white-key" data-note="C4"></div>
+          <div class="white-key" data-note="D4"></div>
+          <div class="white-key" data-note="E4"></div>
+          <div class="white-key" data-note="F4"></div>
+          <div class="white-key" data-note="G4"></div>
+          <div class="white-key" data-note="A4"></div>
+          <div class="white-key" data-note="B4"></div>
+
+          <div class="black-key" style="left: 40px;"  data-note="C#4"></div>
+          <div class="black-key" style="left: 102px;" data-note="D#4"></div>
+          <!-- -->
+          <div class="black-key" style="left: 226px;" data-note="F#4"></div>
+          <div class="black-key" style="left: 288px;" data-note="G#4"></div>
+          <div class="black-key" style="left: 350px;" data-note="A#4"></div>
+          <!-- -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 좌우 화살표 -->
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
   <script src="index.js"></script>
+</body>
 </html>

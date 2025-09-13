@@ -1,0 +1,105 @@
+body { margin: 0; font-family: sans-serif; overflow: hidden; }
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .slide {
+      min-width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .info-table {
+      border-collapse: collapse;
+      width: 50%;
+      font-size: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .info-table th {
+      color: black;
+      font-weight: bold;
+      padding: 14px;
+    }
+    .info-table td {
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+    .info-table tr:nth-child(even) td {
+      background: #f9f9f9;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: rgba(0,0,0,0.4);
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      transition: 0.3s;
+      opacity: 0;
+    }
+    .arrow:hover { color: black; }
+    .container:hover .arrow { opacity: 1; }
+    .arrow.left { left: 20px; }
+    .arrow.right { right: 20px; }
+
+    .photo-gallery {
+      position: relative;
+      width: 390px;
+      height: 520px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .photo-gallery img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.6s ease, opacity 0.6s ease, z-index 0.6s ease;
+    }
+    .photo-gallery img:nth-child(1) { transform: rotate(-5deg) translateX(-20px); z-index: 1; }
+    .photo-gallery img:nth-child(2) { transform: rotate(0deg) translateY(0); z-index: 2; }
+    .photo-gallery img:nth-child(3) { transform: rotate(5deg) translateX(20px); z-index: 1; }
+    .photo-gallery img.active {
+      z-index: 3;
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .piano {
+      position: relative;
+      display: flex;
+    }
+    .white-key {
+      width: 60px;
+      height: 250px;
+      background: white;
+      border: 1px solid #000;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .white-key:active { background: #ddd; }
+
+    .black-key {
+      width: 40px;
+      height: 150px;
+      background: black;
+      border: 1px solid #333;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
+    .black-key:active { background: #444; }
